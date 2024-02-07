@@ -16,13 +16,13 @@
 
 import { ServerTokenManager, TokenManager } from '@backstage/backend-common';
 import {
-  createServiceFactory,
-  coreServices,
   AuthService,
   BackstageCredentials,
   BackstageServiceCredentials,
   BackstageUserCredentials,
   IdentityService,
+  coreServices,
+  createServiceFactory,
 } from '@backstage/backend-plugin-api';
 import { AuthenticationError } from '@backstage/errors';
 import {
@@ -70,7 +70,7 @@ function createUserCredentials(
   } as InternalBackstageUserCredentials;
 }
 
-function toInternalBackstageCredentials(
+export function toInternalBackstageCredentials(
   credentials: BackstageCredentials,
 ): InternalBackstageServiceCredentials | InternalBackstageUserCredentials {
   if (credentials.$$type !== '@backstage/BackstageCredentials') {
@@ -123,8 +123,15 @@ class DefaultAuthService implements AuthService {
     const internalForward =
       options?.forward && toInternalBackstageCredentials(options.forward);
 
-    if (internalForward?.type === 'user') {
-      return { token: internalForward.token };
+    if (internalForward) {
+      const { type } = internalForward;
+      if (type === 'user') {
+        return { token: internalForward.token };
+      } else if (type !== 'service') {
+        throw new AuthenticationError(
+          `Refused to issue service token for credential type '${type}'`,
+        );
+      }
     }
 
     const { token } = await this.tokenManager.getToken();
