@@ -1,5 +1,13 @@
 # @backstage/plugin-app-node
 
+## 0.1.10-next.3
+
+### Patch Changes
+
+- 8472188: Added or fixed the `repository` field in `package.json`.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.6.10-next.3
+
 ## 0.1.10-next.2
 
 ### Patch Changes

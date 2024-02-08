@@ -1,5 +1,17 @@
 # @backstage/plugin-techdocs-module-addons-contrib
 
+## 1.1.5-next.3
+
+### Patch Changes
+
+- 09cedb9: Updated dependency `@react-hookz/web` to `^24.0.0`.
+- Updated dependencies
+  - @backstage/core-components@0.14.0-next.2
+  - @backstage/core-plugin-api@1.9.0-next.1
+  - @backstage/integration@1.9.0-next.0
+  - @backstage/integration-react@1.1.24-next.1
+  - @backstage/plugin-techdocs-react@1.1.16-next.2
+
 ## 1.1.5-next.2
 
 ### Patch Changes

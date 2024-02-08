@@ -1,5 +1,22 @@
 # @backstage/cli
 
+## 0.25.2-next.3
+
+### Patch Changes
+
+- d557d47: Added check for the `repository` field in the `repo fix` command.
+- Updated dependencies
+  - @backstage/cli-node@0.2.3-next.0
+  - @backstage/catalog-model@1.4.4-next.0
+  - @backstage/cli-common@0.1.13
+  - @backstage/config@1.1.1
+  - @backstage/config-loader@1.6.1
+  - @backstage/errors@1.2.3
+  - @backstage/eslint-plugin@0.1.5-next.0
+  - @backstage/integration@1.9.0-next.0
+  - @backstage/release-manifests@0.0.11
+  - @backstage/types@1.1.1
+
 ## 0.25.2-next.2
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @backstage/plugin-kubernetes-node
 
+## 0.1.4-next.3
+
+### Patch Changes
+
+- 8472188: Added or fixed the `repository` field in `package.json`.
+- Updated dependencies
+  - @backstage/backend-plugin-api@0.6.10-next.3
+  - @backstage/catalog-model@1.4.4-next.0
+  - @backstage/types@1.1.1
+  - @backstage/plugin-kubernetes-common@0.7.4-next.1
+
 ## 0.1.4-next.2
 
 ### Patch Changes
